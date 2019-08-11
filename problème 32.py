@@ -2,10 +2,7 @@ liste = []
 for i in range(2, 10000):
 	I, c = str(i), 0
 	for k in range(len(I)):
-		if '0' in I:
-			c = 1
-			break
-		if I[k] in I[:k] or I[k] in I[k+1:]:
+		if '0' in I or I[k] in I[:k] or I[k] in I[k+1:]:
 			c = 1
 			break
 	if c == 0:
@@ -14,20 +11,14 @@ for i in range(2, 10000):
 			if a == 0:
 				J, c = str(j), 0
 				for k in range(len(J)):
-					if '0' in J:
-						c = 1
-						break
-					if J[k] in J[:k] or I[k] in I[k+1:] or J[k] in I:
+					if '0' in J or J[k] in J[:k] or I[k] in I[k+1:] or J[k] in I:
 						c = 1
 						break
 				if c == 0:
 					a = int(i/j)
 					A = str(a)
 					for l in range(len(A)):
-						if '0' in A:
-							c = 1
-							break
-						if A[l] in A[:l] or A[l] in A[l+1:] or A[l] in J or A[l] in I:
+						if '0' in A or A[l] in A[:l] or A[l] in A[l+1:] or A[l] in J or A[l] in I:
 							c = 1
 							break
 					if c == 0:
