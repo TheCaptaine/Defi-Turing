@@ -31,7 +31,3 @@ for i in range(2, 10000):
 							liste += [i]
 							print("{} * {} = {} (a * j = i)".format(a, j, i))
 print(sum(liste))
-
-
-						
-							
